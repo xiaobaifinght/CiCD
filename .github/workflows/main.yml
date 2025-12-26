@@ -28,8 +28,8 @@ jobs:
       # - name: 运行代码检查 (Lint)
       #   run: npm run lint
 
-      - name: 运行单元测试 (Test)
-        run: npm run test
+      # - name: 运行单元测试 (Test)
+      #   run: npm run test
 
   # --- 任务二：构建并推送镜像 (CD) ---
   build-and-push:

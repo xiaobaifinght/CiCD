@@ -80,7 +80,7 @@ jobs:
             # --name: 给容器起个固定的名字，方便下次删除
             docker run -d \
               --name my-node-app-container \
-              -p 80:3000 \
+              -p 80:80 \
               ${{ secrets.DOCKER_USERNAME }}/my-node-app:latest
 
             # 5. 清理没用的旧镜像 (可选，节省磁盘空间)

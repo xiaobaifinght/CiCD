@@ -61,6 +61,7 @@
     "@craco/craco": "^7.1.0",
     "@types/lodash.clonedeep": "^4.5.9",
     "@types/mockjs": "^1.0.10",
-    "@types/qrcode.react": "^3.0.0"
+    "@types/qrcode.react": "^3.0.0",
+    "sass": "^1.97.1"
   }
 }

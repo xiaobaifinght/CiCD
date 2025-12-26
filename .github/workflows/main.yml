@@ -3,9 +3,9 @@ name: CI/CD Pipeline # 工作流名称
 # 1. 触发机制：当 main 分支有代码推送时触发
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   pull_request:
-    branches: ["main"]
+    branches: ["master"]
 
 # 2. 定义任务
 jobs:

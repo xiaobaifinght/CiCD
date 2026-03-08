@@ -1,0 +1,14 @@
+{
+  "name": "@my-org/ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/my-ui.umd.js",
+  "module": "dist/my-ui.es.js",
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.31.0"
+}

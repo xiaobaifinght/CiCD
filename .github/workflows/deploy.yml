@@ -1,0 +1,38 @@
+name: 自动化打包与部署 CI/CD
+
+# 触发条件：当有人向 main 分支 push 代码时
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # 在云端分配一台免费的 Linux 虚拟机
+
+    steps:
+      # 1. 拉取你的最新代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. 安装 Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 3. 安装 pnpm 并装载依赖
+      - name: Install dependencies
+        run: |
+          npm install -g pnpm
+          pnpm install
+
+      # 4. 执行业务项目的打包构建
+      - name: Build Web App
+        run: pnpm --filter web-app run build
+
+      # 5. 把打包好的 dist 文件夹部署到 Github Pages (免费服务器)
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./apps/web-app/dist # 告诉 CD 把哪个文件夹传到网上去

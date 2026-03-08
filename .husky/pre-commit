@@ -1,0 +1,2 @@
+pnpm test
+pnpm --filter web-app run build
